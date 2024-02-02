@@ -154,11 +154,5 @@ unset ANDROID_SDK_ROOT
 # Export git rebase i editor
 export GIT_EDITOR=micro
 
-# Task runner
-export FPATH=~/.oh-my-zsh/completitions/_task:$FPATH
-autoload -U compinit
-compinit -i
-compdef _task task
-
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper_lazy.sh
