@@ -1,0 +1,76 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x5b6268"
+blue = "0x3071db"
+cyan = "0x46d9ff"
+green = "0x4db5bd"
+magenta = "0xa9a1e1"
+red = "0xda8548"
+white = "0xdfdfdf"
+yellow = "0xecbe7b"
+
+[colors.normal]
+black = "0x1c1f24"
+blue = "0x51afef"
+cyan = "0x5699af"
+green = "0x98be65"
+magenta = "0xc678dd"
+red = "0xff6c6b"
+white = "0x202328"
+yellow = "0xda8548"
+
+[colors.primary]
+background = "0x282c34"
+foreground = "0xbbc2cf"
+
+[colors.selection]
+text = "0xbbc2cf"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 7.5
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 5000
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+opacity = 0.93
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 10
+y = 10
