@@ -67,7 +67,7 @@ killall -9 dunst && /usr/bin/dunst &
 # Polkit
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --bg-fill /home/filippo/Immagini/NitrogenWallpaper/wallpaper.jpg
+feh --bg-fill ~/Wallpapers/wallpaper.jpg
 # Dex
 #dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Network Applet
