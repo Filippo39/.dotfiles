@@ -5,7 +5,7 @@ This bare Git repository houses my configuration files, commonly known as dotfil
 ## Configurations
 
 - **Alacritty:** A fast, cross-platform terminal emulator.
-- **bspwm:** A tiling window manager for X11.
+- **bspwm:** A tiling window manager for X11 (supports dual monitor).
 - **Dunst:** A lightweight notification daemon.
 - **Picom:** A X compositor manager.
 - **Polybar:** A status bar for X11.
