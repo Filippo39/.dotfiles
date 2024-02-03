@@ -77,10 +77,10 @@ xsetroot -cursor_name left_ptr &
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh &
 
-# Standup
-#alacritty &
-#google-chrome &
-#slack &
-#thunderbird &
-#alacritty -e $SHELL -c "make stand-up && exec $SHELL" &
+# Autostart programs
+alacritty &
+google-chrome &
+slack &
+thunderbird &
+alacritty -e $SHELL -c "make stand-up && exec $SHELL" &
 
