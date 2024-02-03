@@ -18,3 +18,8 @@ Clone this repository to your home directory using SSH.
 
 ```bash
 git clone git@github.com:Filippo39/.dotfiles.git ~/.dotfiles
+```
+
+## Preview
+
+![Wallpaper](Wallpapers/preview.png)
