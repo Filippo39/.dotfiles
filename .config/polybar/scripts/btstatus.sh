@@ -7,5 +7,5 @@ else
   then 
     echo ""
   fi
-  echo "%{F#2193ff}"
+  echo "%{F#FFB347}"
 fi
