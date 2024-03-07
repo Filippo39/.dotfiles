@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Check number of connected minitors and set right setup
 set_desktops() {
 	if [ "$#" -eq 1 ]; then
-		bspc monitor "$1" -d 1 2 3 4 5 6 7 8 9 10
+		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 	else
 		bspc monitor "$1" -d 1 7 8 9 10
 		xrandr --output "$1" \
@@ -45,7 +45,7 @@ bspc config pointer_action3 resize_corner
 
 # Rules
 bspc rule -a Slack desktop='7'
-bspc rule -a Google-chrome desktop='2'
+# bspc rule -a Google-chrome desktop='2'
 bspc rule -a Alacritty desktop='1'
 bscp rule -a Thunderbird desktop='9'
 
