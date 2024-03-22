@@ -84,3 +84,5 @@ slack &
 thunderbird &
 alacritty -e $SHELL -c "make stand-up && exec $SHELL" &
 
+setxkbmap -layout us
+setxkbmap -option compose:ralt  
