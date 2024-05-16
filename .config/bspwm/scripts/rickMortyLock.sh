@@ -1,47 +1,52 @@
 #!/bin/bash
 
-# Percorso all'immagine personalizzata
+# Path to the custom image
 custom_image="/home/filippo/Immagini/NitrogenWallpaper/rickMortyLock.png"
 
 # Take a screenshot of the entire multi-monitor setup
 scrot /tmp/screen.png
 
 # Blur the screenshot
-convert /tmp/screen.png -blur 0x5 /tmp/screen_blur.png
+convert /tmp/screen.png -blur 0x8 /tmp/screen_blur.png
 
 # Get monitor information
 monitor_info=$(xrandr --query | grep ' connected')
-
-# Count the number of connected monitors
 monitor_count=$(echo "$monitor_info" | wc -l)
 
-if [ $monitor_count -eq 2 ]; then
-  # Get the dimensions and position of the second monitor
-  second_monitor=$(echo "$monitor_info" | tail -n 1 | awk '{print $3}')
-  second_monitor_width=$(echo $second_monitor | cut -d'x' -f1)
-  second_monitor_height=$(echo $second_monitor | cut -d'x' -f2 | cut -d'+' -f1)
-  second_monitor_x=$(echo $second_monitor | cut -d'+' -f2)
-  second_monitor_y=$(echo $second_monitor | cut -d'+' -f3)
+# Function to resize and center the image on a monitor
+center_image_on_monitor() {
+  local monitor_dimensions=$1
+  local monitor_x=$(echo $monitor_dimensions | cut -d'+' -f2)
+  local monitor_y=$(echo $monitor_dimensions | cut -d'+' -f3)
+  local monitor_width=$(echo $monitor_dimensions | cut -d'x' -f1)
+  local monitor_height=$(echo $monitor_dimensions | cut -d'x' -f2 | cut -d'+' -f1)
 
-  # Resize the custom image if it is larger than the second monitor, while maintaining the aspect ratio
-  convert "$custom_image" -resize "${second_monitor_width}x${second_monitor_height}>" /tmp/custom_image_resized.png
+  # Resize the custom image if it is larger than the monitor, while maintaining the aspect ratio
+  convert "$custom_image" -resize "${monitor_width}x${monitor_height}>" /tmp/custom_image_resized.png
 
   # Get the dimensions of the resized custom image
-  resized_width=$(identify -format "%w" /tmp/custom_image_resized.png)
-  resized_height=$(identify -format "%h" /tmp/custom_image_resized.png)
+  local resized_width=$(identify -format "%w" /tmp/custom_image_resized.png)
+  local resized_height=$(identify -format "%h" /tmp/custom_image_resized.png)
 
-  # Calculate the position to center the image on the second monitor
-  pos_x=$((second_monitor_x + (second_monitor_width - resized_width) / 2))
-  pos_y=$((second_monitor_y + (second_monitor_height - resized_height) / 2))
+  # Calculate the position to center the image on the monitor
+  local pos_x=$((monitor_x + (monitor_width - resized_width) / 2))
+  local pos_y=$((monitor_y + (monitor_height - resized_height) / 2))
 
-  # Overlay the custom image on the blurred screenshot, centered on the second monitor
+  # Overlay the custom image on the blurred screenshot, centered on the monitor
   convert /tmp/screen_blur.png /tmp/custom_image_resized.png -geometry +$pos_x+$pos_y -composite /tmp/screen_combined.png
 
   # Remove the temporary resized custom image
   rm /tmp/custom_image_resized.png
+}
+
+if [ $monitor_count -eq 2 ]; then
+  # Use the second monitor
+  second_monitor=$(echo "$monitor_info" | tail -n 1 | awk '{print $3}')
+  center_image_on_monitor $second_monitor
 else
-  # Use only the blurred image if there's only one monitor
-  cp /tmp/screen_blur.png /tmp/screen_combined.png
+  # Use the primary monitor
+  primary_monitor=$(echo "$monitor_info" | head -n 1 | awk '{print $3}')
+  center_image_on_monitor $primary_monitor
 fi
 
 # Lock the screen with the combined image
