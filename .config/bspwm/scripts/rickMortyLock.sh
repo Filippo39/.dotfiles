@@ -3,35 +3,49 @@
 # Percorso all'immagine personalizzata
 custom_image="/home/filippo/Immagini/NitrogenWallpaper/rickMortyLock.png"
 
-# Prendi uno screenshot dell'intero setup multi-monitor
+# Take a screenshot of the entire multi-monitor setup
 scrot /tmp/screen.png
 
-# Sfoca l'immagine
+# Blur the screenshot
 convert /tmp/screen.png -blur 0x5 /tmp/screen_blur.png
 
-# Ottieni informazioni sui monitor
+# Get monitor information
 monitor_info=$(xrandr --query | grep ' connected')
 
-# Conta il numero di monitor connessi
+# Count the number of connected monitors
 monitor_count=$(echo "$monitor_info" | wc -l)
 
 if [ $monitor_count -eq 2 ]; then
-  # Ottieni le dimensioni e la posizione del secondo monitor
+  # Get the dimensions and position of the second monitor
   second_monitor=$(echo "$monitor_info" | tail -n 1 | awk '{print $3}')
   second_monitor_width=$(echo $second_monitor | cut -d'x' -f1)
   second_monitor_height=$(echo $second_monitor | cut -d'x' -f2 | cut -d'+' -f1)
   second_monitor_x=$(echo $second_monitor | cut -d'+' -f2)
   second_monitor_y=$(echo $second_monitor | cut -d'+' -f3)
 
-  # Sovrapponi l'immagine personalizzata sul secondo monitor
-  convert /tmp/screen_blur.png "$custom_image" -geometry +$second_monitor_x+$second_monitor_y -composite /tmp/screen_combined.png
+  # Resize the custom image if it is larger than the second monitor, while maintaining the aspect ratio
+  convert "$custom_image" -resize "${second_monitor_width}x${second_monitor_height}>" /tmp/custom_image_resized.png
+
+  # Get the dimensions of the resized custom image
+  resized_width=$(identify -format "%w" /tmp/custom_image_resized.png)
+  resized_height=$(identify -format "%h" /tmp/custom_image_resized.png)
+
+  # Calculate the position to center the image on the second monitor
+  pos_x=$((second_monitor_x + (second_monitor_width - resized_width) / 2))
+  pos_y=$((second_monitor_y + (second_monitor_height - resized_height) / 2))
+
+  # Overlay the custom image on the blurred screenshot, centered on the second monitor
+  convert /tmp/screen_blur.png /tmp/custom_image_resized.png -geometry +$pos_x+$pos_y -composite /tmp/screen_combined.png
+
+  # Remove the temporary resized custom image
+  rm /tmp/custom_image_resized.png
 else
-  # Usa solo l'immagine sfocata se c'è un solo monitor
+  # Use only the blurred image if there's only one monitor
   cp /tmp/screen_blur.png /tmp/screen_combined.png
 fi
 
-# Blocca lo schermo con l'immagine combinata
+# Lock the screen with the combined image
 i3lock -i /tmp/screen_combined.png
 
-# Rimuovi le immagini temporanee
+# Remove the temporary images
 rm /tmp/screen.png /tmp/screen_blur.png /tmp/screen_combined.png
