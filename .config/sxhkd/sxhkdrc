@@ -38,7 +38,8 @@ super + z
 
 # Lock screen
 super + k
-	~/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
+	~/.config/bspwm/scripts/rickMortyLock.sh
+#	~/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh -p
 	
 # VsCode
 super + v
@@ -47,6 +48,7 @@ super + v
 # Flameshot
 super + p
 	flameshot gui
+
 
 # Restore black screen
 super + y

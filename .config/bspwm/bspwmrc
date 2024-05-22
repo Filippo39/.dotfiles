@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Check number of connected minitors and set right setup
 set_desktops() {
 	if [ "$#" -eq 1 ]; then
-		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+		bspc monitor "$1" -d 1 2 3 4 5 6 7 8 9 10
 	else
 		bspc monitor "$1" -d 1 7 8 9 10
 		xrandr --output "$1" \
@@ -29,7 +29,7 @@ done &
 # Entrypoint
 init	
 
-bspc config border_width         1
+bspc config border_width        1
 bspc config window_gap          10
 bspc config top_padding		    -5
 
@@ -82,7 +82,7 @@ alacritty &
 google-chrome &
 slack &
 thunderbird &
-alacritty -e $SHELL -c "make stand-up && exec $SHELL" &
+#alacritty -e $SHELL -c "make stand-up && exec $SHELL" &  
 
 setxkbmap -layout us
-setxkbmap -option compose:ralt  
+setxkbmap -option compose:ralt
