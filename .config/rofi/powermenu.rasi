@@ -1,8 +1,3 @@
-/*******************************************************
- * ROFI configs i3 powermenu for EndeavourOS
- * Maintainer: joekamprad <joekamprad@endeavouros.com>
- *******************************************************/
-
 configuration {
     font:                           "Sourcecode Pro Regular 10";
     show-icons:                     false;
@@ -21,7 +16,8 @@ window {
     transparency:                   "real";
     width:                          120px;
     location:                       northwest;
-    y-offset:                       30;
+    y-offset:                       45;
+    x-offset:                       10;
     /*x-offset:	                    850;*/
     transparency:                   "real";
 }
@@ -32,7 +28,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 2px ;
 }
 element-text {
     background-color: inherit;

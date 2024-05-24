@@ -275,21 +275,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#161616"
+    background = "#282c34"
     foreground = "#82cfff"
     timeout = 300
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-Icons-master/src/Arc-OSX-D/status/96/dialog-information.png
 
 [urgency_normal]
-    background = "#161616"
+    background = "#282c34"
     foreground = "#82cfff"
     timeout = 300
     # Icon for notifications with normal urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-Icons-master/src/Arc-OSX-D/status/96/dialog-question.png
 
 [urgency_critical]
-    background = "#161616"
+    background = "#282c34"
     foreground = "#82cfff"
     frame_color = "#ff7f7f"
     timeout = 300

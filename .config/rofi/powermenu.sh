@@ -1,11 +1,11 @@
 #!/bin/env bash
 
 # Options for powermenu
-lock=" Lock"
-logout=" Logout"
+lock="󰌾 Lock"
+logout="󰍃 Logout"
 shutdown=" Shutdown"
-reboot=" Reboot"
-sleep="  Sleep"
+reboot=" Reboot"
+sleep="󰤄  Sleep"
 
 # Get answer from user via rofi
 selected_option=$(echo "$lock
@@ -26,7 +26,7 @@ $shutdown" | rofi -dmenu\
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]
 then
-    /home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
+    /home/$USER/.config/bspwm/scripts/rickMortyLock.sh
 elif [ "$selected_option" == "$logout" ]
 then
     bspc quit

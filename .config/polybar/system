@@ -1,0 +1,5 @@
+[system]
+adapter = ACAD
+battery = BAT0
+graphics_card = acpi_video0
+network_interface = enp7s0

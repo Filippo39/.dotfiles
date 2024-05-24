@@ -45,7 +45,6 @@ bspc config pointer_action3 resize_corner
 
 # Rules
 bspc rule -a Slack desktop='7'
-# bspc rule -a Google-chrome desktop='2'
 bspc rule -a Alacritty desktop='1'
 bscp rule -a Thunderbird desktop='9'
 
@@ -67,7 +66,7 @@ killall -9 dunst && /usr/bin/dunst &
 # Polkit
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --bg-fill ~/Wallpapers/wallpaper.jpg
+feh --bg-fill ~/Wallpapers/wallpaper_nord.png
 # Dex
 #dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Network Applet
