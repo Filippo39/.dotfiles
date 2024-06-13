@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Check number of connected minitors and set right setup
 set_desktops() {
 	if [ "$#" -eq 1 ]; then
-		bspc monitor "$1" -d 1 2 3 4 5 6 7 8 9 10
+		bspc monitor "$1" -d 1 7 8 9 10 2 3 4 5 6
 	else
 		bspc monitor "$1" -d 1 7 8 9 10
 		xrandr --output "$1" \
@@ -31,7 +31,7 @@ init
 
 bspc config border_width        1
 bspc config window_gap          10
-bspc config top_padding		    -5
+bspc config top_padding		    -10
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -60,7 +60,8 @@ bspc config presel_feedback_color	"#008ce3"
 # Bar
 ~/.config/polybar/launch.sh &
 # Compositor
-picom --experimental-backend &
+# picom --experimental-backends &
+picom &
 # Notifications
 killall -9 dunst && /usr/bin/dunst &
 # Polkit
