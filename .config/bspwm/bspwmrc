@@ -66,10 +66,12 @@ bspc config presel_feedback_color "$color1"
 ~/.config/polybar/launch.sh &
 # Wallpaper
 feh --bg-fill ~/Wallpapers/Mocha_Wolf.png
-    
+
+# Set color scheme skipping terminal and tty
+wal --cols16 -i ~/Wallpapers/Mocha_Wolf.png -s -t
+
 # Path to the autostart flag file
 AUTOSTART_FLAG="/tmp/bspwm_autostart_done"
-
 
 # Start applications only if not already started
 if [ ! -f "$AUTOSTART_FLAG" ]; then
