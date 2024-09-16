@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	alacritty && bspc desktop -f 1
 
 # program launcher
 super + @space
