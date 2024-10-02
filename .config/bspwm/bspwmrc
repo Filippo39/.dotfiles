@@ -29,14 +29,12 @@ done &
 # Entrypoint
 init
 
-# Wallpaper
-feh --bg-fill ~/Wallpapers/Mocha_Wolf.png
-
 # Set color scheme skipping terminal and tty
-wal --cols16 -i ~/Wallpapers/Mocha_Wolf.png -s -t
+wal --cols16 -i ~/Wallpapers/japan.jpg -s -t
+wal -R
 
 # Source pywal16 colors
-. "${HOME}/.cache/wal/colors.sh"
+source ~/.cache/wal/colors.sh
 
 ~/.config/polybar/launch.sh &	
 
@@ -53,6 +51,11 @@ bspc config pointer_modifier mod4
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
+# Automatically move windows from the second monitor to the first
+# when the second monitor is disconnected. This ensures no windows
+# become inaccessible when only one monitor is active.
+bspc config remove_unplugged_monitors true
+bspc config remove_disabled_monitors true
 
 # Rules
 # bspc rule -a Slack desktop='7'
@@ -78,7 +81,9 @@ AUTOSTART_FLAG="/tmp/bspwm_autostart_done"
 if [ ! -f "$AUTOSTART_FLAG" ]; then
     touch "$AUTOSTART_FLAG"
 
-    # Bar
+	# Wallpaper
+	feh --bg-fill ~/Wallpapers/japan.jpg
+
     # Compositor
     # picom --experimental-backends &
     picom &
