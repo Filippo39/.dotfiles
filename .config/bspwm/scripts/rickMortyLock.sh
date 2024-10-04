@@ -7,7 +7,7 @@ custom_image="/home/filippo/Immagini/NitrogenWallpaper/rickMortyLock.png"
 scrot /tmp/screen.png
 
 # Blur the screenshot
-convert /tmp/screen.png -blur 0x30 /tmp/screen_blur.png
+convert /tmp/screen.png -blur 0x50 /tmp/screen_blur.png
 
 # Get monitor information
 monitor_info=$(xrandr --query | grep ' connected')
@@ -64,5 +64,6 @@ fi
 # Lock the screen with the combined image
 i3lock -i /tmp/screen_combined.png
 
+cp /tmp/screen_combined.png ~
 # Remove the temporary images
 rm /tmp/screen.png /tmp/screen_blur.png /tmp/screen_combined.png
