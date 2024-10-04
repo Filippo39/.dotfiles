@@ -7,11 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
-#polybar top -c ~/.config/polybar/config.ini &
-
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    echo $m
     MONITOR=$m polybar --reload left &
     MONITOR=$m polybar --reload center &
     MONITOR=$m polybar --reload right &

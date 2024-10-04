@@ -29,11 +29,10 @@ PLAYERCTL_STATUS=$(playerctl --player=$PLAYER status 2>/dev/null)
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -eq 0 ]; then
-	STATUS=""
-    # STATUS=$PLAYERCTL_STATUS
+    STATUS=$PLAYERCTL_STATUS
 else
-	STATUS=""
     # STATUS="Player Off"
+	STATUS=""
 fi
 
 if [ "$1" == "--status" ]; then
@@ -46,8 +45,8 @@ else
         update_hooks "$PARENT_BAR_PID" 2
         playerctl --player=$PLAYER metadata --format "$FORMAT"
     elif [ "$STATUS" = "Player Off"  ]; then
-		echo ""
         # echo "$STATUS"
+		echo ""
     else
         update_hooks "$PARENT_BAR_PID" 1
         playerctl --player=$PLAYER metadata --format "$FORMAT"
