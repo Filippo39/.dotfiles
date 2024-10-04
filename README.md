@@ -12,6 +12,7 @@ This bare Git repository houses my configuration files, commonly known as dotfil
 - **Rofi:** A window switcher, application launcher, and dmenu replacement.
 - **Sxhkd:** Simple X hotkey daemon.
 - **Pywal16** A tool that generates a color palette from the dominant colors in an image.
+- **Zsh:** A powerful shell with scripting capabilities and customization options.
 
 ## Usage
 
