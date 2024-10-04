@@ -22,7 +22,10 @@ git clone git@github.com:Filippo39/.dotfiles.git ~/.dotfiles
 ```
 
 ## Preview
-
 ![preview](Wallpapers/preview.png)
+
+## Lock preview
 ![lockPreview](Wallpapers/lockPreview.png)
+
+## Flow
 ![flow](Wallpapers/flow.gif)
