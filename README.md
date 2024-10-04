@@ -23,4 +23,5 @@ git clone git@github.com:Filippo39/.dotfiles.git ~/.dotfiles
 ## Preview
 
 ![Wallpaper](Wallpapers/preview.png)
+![Wallpaper](Wallpapers/lockPreview.png)
 
