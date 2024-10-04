@@ -5,12 +5,13 @@ This bare Git repository houses my configuration files, commonly known as dotfil
 ## Configurations
 
 - **Alacritty:** A fast, cross-platform terminal emulator.
-- **bspwm:** A tiling window manager for X11 (supports dual monitor).
+- **Bspwm:** A tiling window manager for X11 (supports dual monitor).
 - **Dunst:** A lightweight notification daemon.
-- **Picom:** A X compositor manager.
+- **Picom:** A X compositor manager (https://github.com/yshui/picom/releases/tag/v12-rc4 for animations).
 - **Polybar:** A status bar for X11.
 - **Rofi:** A window switcher, application launcher, and dmenu replacement.
-- **sxhkd:** Simple X hotkey daemon.
+- **Sxhkd:** Simple X hotkey daemon.
+- **Pywal16** A tool that generates a color palette from the dominant colors in an image.
 
 ## Usage
 
@@ -22,6 +23,6 @@ git clone git@github.com:Filippo39/.dotfiles.git ~/.dotfiles
 
 ## Preview
 
-![Wallpaper](Wallpapers/preview.png)
-![Wallpaper](Wallpapers/lockPreview.png)
-
+![preview](Wallpapers/preview.png)
+![lockPreview](Wallpapers/lockPreview.png)
+![flow](Wallpapers/flow.gif)
