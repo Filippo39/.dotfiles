@@ -62,7 +62,9 @@ else
 fi
 
 # Lock the screen with the combined image
-i3lock -i /tmp/screen_combined.png
+dunstctl set-paused true
+i3lock --nofork -i /tmp/screen_combined.png
+dunstctl set-paused false
 
 cp /tmp/screen_combined.png ~
 # Remove the temporary images
