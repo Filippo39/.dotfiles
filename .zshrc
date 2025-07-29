@@ -16,6 +16,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_OPTS="--layout=default --preview 'bat --color=always {}'"
 export FZF_ALT_C_OPTS="--layout=default --preview 'tree -C {} | head -200' \
                        --border-label='Directories '"
+# Disable pywal color scheme
+export FZF_DEFAULT_OPTS="--color=16"
+
 
 # ZSH history config
 HIST_STAMPS="%d/%m/%y %T"
@@ -87,7 +90,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf k zsh-autosuggestions)
+plugins=(git fzf k zsh-autosuggestions notify)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,6 +135,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias task='go-task -t ~/Taskfile.yml'
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias share-device="scrcpy --window-borderless & disown"
 
 
 complete -C /home/filippo/Scaricati/terraform terraform
@@ -166,3 +170,12 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 # flashlight
 export PATH="/home/filippo/.flashlight/bin:$PATH"
+
+# Set AWS sandbox profile
+export AWS_PROFILE=sandbox
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/filippo/.dart-cli-completion/zsh-config.zsh ]] && . /home/filippo/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

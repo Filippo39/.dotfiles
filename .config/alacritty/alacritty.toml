@@ -57,7 +57,7 @@ y = 0
 [scrolling]
 history = 5000
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 
@@ -74,3 +74,5 @@ instance = "Alacritty"
 [window.padding]
 x = 10
 y = 10
+
+[terminal]

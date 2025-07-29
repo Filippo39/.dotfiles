@@ -31,7 +31,7 @@ declare -A package_mapping=(
     ["redis"]="Redisinsight"
     ["ngrock"]="ngrok"
     ["Beekeeper"]="beekeeper-studio-bin"
-	["Remmina"]="remmina"
+	["Remmina"]="remmina-git"
 	["Joplin"]="joplin-desktop"
 	["Google Chrome"]="google-chrome"
 	["Android SDK"]="android-sdk android-sdk-platform-tools android-sdk-build-tools"
@@ -39,6 +39,7 @@ declare -A package_mapping=(
 	["Slack"]="slack-desktop"
 	["Fira code font"]="ttf-fira-code"
 	["terraform"]="terraform terragrunt"
+	["Filezilla"]="filezilla"
 )
 
 echo "${bold}${yellow}Do you want to install:${reset}"
