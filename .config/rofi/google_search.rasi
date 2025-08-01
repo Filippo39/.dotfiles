@@ -1,0 +1,45 @@
+@import "~/.config/rofi/arc_dark_transparent_colors.rasi"
+
+configuration {
+    font: "Iosevka Nerd Font 14";
+    show-icons: false;
+    disable-history: false;
+    location: 0;
+    width: 50;
+    lines: 0;
+    columns: 1;
+}
+
+window {
+    background-color: @background;
+    border: 0px;
+    padding: 0px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar ];
+    padding: 0px;
+}
+
+inputbar {
+    background-color: @normal-background;
+    border-radius: 12px;
+    padding: 24px 30px;
+    children: [ prompt, entry ];
+    spacing: 10px;
+}
+
+prompt {
+    text-color: @foreground;
+    font: "Iosevka Nerd Font 14";
+}
+
+entry {
+    expand: true;
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder: "Cerca su Google...";
+    font: "Iosevka Nerd Font 14";
+    cursor: text;
+}
