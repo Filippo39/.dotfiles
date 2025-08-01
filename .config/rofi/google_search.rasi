@@ -39,7 +39,7 @@ entry {
     expand: true;
     background-color: transparent;
     text-color: @foreground;
-    placeholder: "Cerca su Google...";
+    placeholder: "Search on Google...";
     font: "Iosevka Nerd Font 14";
     cursor: text;
 }
