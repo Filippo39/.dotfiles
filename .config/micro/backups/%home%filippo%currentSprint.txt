@@ -1,0 +1,16 @@
+SACORE-5152 Authentication towards salesforce API
+
+SACORE-5153 User registration to salesforce
+- Anche questo sotto FF 
+- Usare i campi nel PDF, di seguito un esempio di quelli più utili ma sono da controllare tutti
+
+{
+   "firstName": "asdf",
+   "lastName": "asdf",
+   "email": "mail@deejungle.com",
+   "phone": "123123123",
+   "customerCode": "451669",
+   "birthdate": "1990-05-15",
+   "registrationDate": "2024-03-20",
+   "flagMarketing": <boolean>
+ }

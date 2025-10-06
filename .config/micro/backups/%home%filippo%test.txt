@@ -1,0 +1,8 @@
+- [ ] Apertura WEB dal drawer con italiano e con altra lingua
+- [ ] Check analogo HelpPage FAQ, istruzioni Orbit e Contatti
+- [ ] Check analogo messaggi
+- [ ] Check lingua dei quiz data la modifica alla logica
+- [ ] Check isHelpFormEnabled
+- [ ] Check lingua salvata sul DB o modificata
+- [ ] Check lingua static content
+- [ ] Test migrate zustand
