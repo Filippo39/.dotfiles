@@ -1,0 +1,5 @@
+- Al momento tutta la logica è lato app, quindi un utente è inm grado di vedere i messaggi passati ma non le campagne, corretto? Se cosi va bene allora dobbiamo resettare le campagne al cambio utente/server, altrimenti vedo delle campagne non mie.
+	- ShadowList bug
+	- Non ce ordine tra campagne e messaggi
+- A quanto ho capito su Zustand viene salvata ogni singola campagna, per riproporla poi nei messaggi, ma questa logica non considera la lingua utente. In sostanza se l'utente riceve una notifica in-app in italiano e poi cambia lingua, vedrà per sempre nella lista dei messaggi, la notifica in italiano.
+	- Inoltre se Om cambia testo/immagine/expirationDate, l'app non lo puo sapere quindi meglio se tutto viene gestito lato backend dai messaggi
